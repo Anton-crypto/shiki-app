@@ -27,7 +27,6 @@
 
     const card = props?.card;
 
-    console.log(props)
 </script>
 
 <style lang="scss">

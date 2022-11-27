@@ -1,10 +1,13 @@
 <template>
     <div class="headers">
         <div>
-            <NuxtLink v-for="(header, index) in headers" :key="index" class="headers-item" :to="'/' + header.path">{{header.name}}</NuxtLink>
-        </div>
-        <div>
-
+            <NuxtLink 
+                v-for="(header, index) in headers" 
+                :key="index" 
+                class="headers-item" :to="'/' + header.path"
+            >
+                {{header.name}}
+            </NuxtLink>
         </div>
     </div>
 </template>

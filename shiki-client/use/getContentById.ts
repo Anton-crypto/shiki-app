@@ -1,24 +1,4 @@
-<template>
-    <div class="contents">
-        <NuxtLink                 
-            v-for="(card, index) in cards"  
-            :to="'/content-' + $route.params.type + '-' + card.id"
-        >
-            <TheCard 
-                :card="card" 
-                class="contents-item" 
-                :key="index"
-            >
-            </TheCard>
-        </NuxtLink>
-    </div>
-</template>
-
-<script setup lang="ts">
-	// import { ref, reactive } from 'vue' // Реактивность.
-
-    const router = useRouter();
-
+function getContenById(id: string) {
     let cards : IContent [] = [
         {
             titleContent: "Врата Штейна",
@@ -42,15 +22,12 @@
             typeContent: "TV Сериал",
         },
     ]
-</script>
+    console.log(id)
+    console.log(cards.filter((item) => item.id == id))
+    return cards.filter((item) => item.id == id)[0];
+}
 
-<style lang="scss">
-    .contents {
-        &-item {
-            margin: 10px;
-        }
-        padding: 10px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-</style>
+
+export  { 
+    getContenById,
+} 
